@@ -1,10 +1,9 @@
 package modeloInfo;
 
-public class InfoServer implements Informable {
+public class InfoServerVivo implements Informable{
 
     @Override
     public int getIdOperacion() {
-        return 1;
+        return 0;
     }
-
 }

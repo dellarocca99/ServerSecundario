@@ -3,10 +3,11 @@ package repositorio;
 import modeloInfo.InfoClienteAtendido;
 import modeloUtil.TiempoAtencion;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.Stack;
 
-public class Repositorio {
+public class Repositorio implements Serializable {
 
     private static Repositorio instance=null;
     private LinkedList<Integer> colaClientes=null;

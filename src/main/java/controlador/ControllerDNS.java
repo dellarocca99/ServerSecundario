@@ -1,6 +1,6 @@
 package controlador;
 
-import modeloInfo.InfoServer;
+import modeloInfo.InfoServerVivo;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -23,7 +23,7 @@ public class ControllerDNS implements Runnable{
                 ObjectInputStream ois=new ObjectInputStream(socket.getInputStream());
                 ois.readObject();
                 ObjectOutputStream oos=new ObjectOutputStream(socket.getOutputStream());
-                oos.writeObject(new InfoServer());
+                oos.writeObject(new InfoServerVivo());
                 socket.close();
             }
         } catch (IOException | ClassNotFoundException e) {

@@ -25,20 +25,16 @@ public class ControllerServerPri implements Runnable{
                 socket.close();
                 Thread.sleep(2000);
             } catch (IOException | ClassNotFoundException | InterruptedException e) {
-                e.printStackTrace();
+                System.out.println("El server primario esta desconectado");
             }
 
         }
     }
 
-    public void enviarPaquete(Informable paquete) {
-        try {
-            this.socket=new Socket("localhost",9393);
-            ObjectOutputStream oos= new ObjectOutputStream(socket.getOutputStream());
-            oos.writeObject(paquete);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public void enviarPaquete(Informable paquete) throws IOException {
+        this.socket = new Socket("localhost", 9393);
+        ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
+        oos.writeObject(paquete);
     }
 }
 
